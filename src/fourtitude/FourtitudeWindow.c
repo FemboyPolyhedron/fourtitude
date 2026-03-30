@@ -331,9 +331,8 @@ void FOUR_Window_pollEvents(FOUR_Window* self)
     self->last_char = 0;
 
     MSG msg = {0};
-    while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+    while (PeekMessage(&msg, self->handle, 0, 0, PM_REMOVE))
     {
-        if (msg.message == WM_QUIT) { self->should_close = 1; return; }
         if (msg.message == WM_CHAR) self->last_char = (int)msg.wParam;
         if (msg.message == WM_MOUSEMOVE) { self->mouse_x = (int)LOWORD(msg.lParam); self->mouse_y = (int)HIWORD(msg.lParam); }
         if (msg.message == WM_LBUTTONDOWN) self->mouse_down = 1;
