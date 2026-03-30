@@ -15,6 +15,7 @@ typedef enum
 typedef struct FOUR_Logger FOUR_Logger;
  
 void FOUR_LogSetFile(const char* path);
+void FOUR_LogSetStdout(int enabled);
  
 FOUR_Logger*  FOUR_GetLogger(const char* name);
  

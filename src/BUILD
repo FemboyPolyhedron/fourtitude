@@ -86,7 +86,7 @@ cc_import(
 
 cc_library(
     name = "fourtitude_cpp_prebuilt",
-    hdrs = ["fourtitude/fourtitudecpp.h"],
+    hdrs = glob(["fourtitude/*.h"]),
     strip_include_prefix = "/src",
     deps = [":_fourtitude_cpp_import", ":fourtitude_c_prebuilt"],
     visibility = ["//visibility:public"],

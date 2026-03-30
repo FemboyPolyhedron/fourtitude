@@ -12,7 +12,8 @@
 
 struct FOUR_Logger { char name[64]; };
 
-static FILE* s_log          = NULL;
+static FILE* s_log = NULL;
+static int   s_stdout = 0;
 static FOUR_Logger s_loggers[FOUR_MAX_LOGGERS];
 static int s_logger_count = 0;
 
@@ -49,6 +50,8 @@ void FOUR_LogSetFile(const char* path)
     s_log = path ? fopen(path, "w") : NULL;
 }
 
+void FOUR_LogSetStdout(int enabled) { s_stdout = enabled; }
+
 FOUR_Logger* FOUR_GetLogger(const char* name)
 {
     if (!name || !name[0]) name = "default";
@@ -81,6 +84,8 @@ void FOUR_Logger_Log(FOUR_Logger* logger, FOUR_LogLevel level, const char* fmt, 
 
     char out[4224];
     snprintf(out, sizeof(out), "[%s] [%s/%s] %s\n", ts, name, level_str(level), body);
+
+    if (s_stdout) { fputs(out, stdout); fflush(stdout); }
 
     if (s_log) { fputs(out, s_log); fflush(s_log); }
     #ifdef _WIN32
