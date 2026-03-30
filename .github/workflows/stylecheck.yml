@@ -23,4 +23,4 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y build-essential
 
       - name: run stylecheck
-        run: bazel test //tools:stylecheck
+        run: bazel test //tools:stylecheck --bazelrc=/dev/null --nohome_rc --nosystem_rc
