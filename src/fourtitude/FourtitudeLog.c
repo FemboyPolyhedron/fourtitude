@@ -29,6 +29,18 @@ static const char* level_str(FOUR_LogLevel level)
     }
 }
 
+static const char* level_color(FOUR_LogLevel level)
+{
+    switch (level)
+    {
+        case FOUR_LOG_DEBUG: return "0;37m"; 
+        case FOUR_LOG_INFO: return "0;36m";  
+        case FOUR_LOG_WARN: return "0;33m";  
+        case FOUR_LOG_ERROR: return "0;31m"; 
+        default: return "0m"; 
+    }
+}
+
 static void get_timestamp(char* buf, int size)
 {
     #ifdef _WIN32
@@ -84,6 +96,9 @@ void FOUR_Logger_Log(FOUR_Logger* logger, FOUR_LogLevel level, const char* fmt, 
 
     char out[4224];
     snprintf(out, sizeof(out), "[%s] [%s/%s] %s\n", ts, name, level_str(level), body);
+
+    char out2[4224];
+    snprintf(out2, sizeof(out2), "[%s] [\x1b[0;32m%s/\x1b[%s%s] %s\n", ts, name, level_color(level), level_str(level), body);
 
     if (s_stdout) { fputs(out, stdout); fflush(stdout); }
 
