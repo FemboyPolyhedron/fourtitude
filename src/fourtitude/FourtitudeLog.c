@@ -100,7 +100,7 @@ void FOUR_Logger_Log(FOUR_Logger* logger, FOUR_LogLevel level, const char* fmt, 
     char out2[4224];
     snprintf(out2, sizeof(out2), "[%s] [\x1b[0;32m%s/\x1b[%s%s] %s\n", ts, name, level_color(level), level_str(level), body);
 
-    if (s_stdout) { fputs(out, stdout); fflush(stdout); }
+    if (s_stdout) { fputs(out2, stdout); fflush(stdout); }
 
     if (s_log) { fputs(out, s_log); fflush(s_log); }
     #ifdef _WIN32
