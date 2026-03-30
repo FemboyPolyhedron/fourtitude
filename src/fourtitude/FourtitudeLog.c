@@ -98,7 +98,7 @@ void FOUR_Logger_Log(FOUR_Logger* logger, FOUR_LogLevel level, const char* fmt, 
 void FOUR_Log(const char* fmt, ...)
 {
     static FOUR_Logger* s_legacy = NULL;
-    if (!s_legacy) s_legacy = FOUR_GetLogger("Fourtitude");
+    if (!s_legacy) s_legacy = FOUR_GetLogger("Fourtitude::FourtitudeLog");
 
     va_list ap;
     va_start(ap, fmt);

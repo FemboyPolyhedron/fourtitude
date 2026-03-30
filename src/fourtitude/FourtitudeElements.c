@@ -5,7 +5,7 @@
 #include <math.h>
 
 static FOUR_Logger* s_elem_log = NULL;
-#define ELEM_LOG() (s_elem_log ? s_elem_log : (s_elem_log = FOUR_GetLogger("Elements")))
+#define ELEM_LOG() (s_elem_log ? s_elem_log : (s_elem_log = FOUR_GetLogger("Fourtitude::FourtitudeElements")))
 
 static int is_hidden(FOUR_Element* self)
 {
