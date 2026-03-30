@@ -192,7 +192,7 @@ namespace Fourtitude
         public: const FOUR_Form* raw() const { return &_cform; }
     };
 
-    /// @brief Runtime FCS stylesheet loader and applier
+    /// @brief FCS Stylesheet
     class FourtitudeStylesheet
     {
         private: FCS_Stylesheet* sheet = nullptr;
