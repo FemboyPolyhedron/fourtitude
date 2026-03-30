@@ -43,7 +43,7 @@ cc_library(
         "fourtitude/FourtitudeForm.cpp",
         "fourtitude/FourtitudeWindow.cpp",
     ],
-    hdrs = glob(["fourtitude/*.hpp"]),
+    hdrs = ["fourtitude/fourtitudecpp.h"],
     strip_include_prefix = "/src",
     copts     = ["-std=c++17"],
     deps      = [":fourtitude_c"],
