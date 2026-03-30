@@ -11,10 +11,6 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-# ---------------------------------------------------------------------------
-# Source-build targets  (use from D:/fourtitude workspace only)
-# ---------------------------------------------------------------------------
-
 cc_library(
     name = "fourtitude_c",
     srcs = [
@@ -54,11 +50,6 @@ cc_library(
     linkstatic = True,
     visibility = ["//visibility:public"],
 )
-
-# ---------------------------------------------------------------------------
-# Prebuilt-import targets  (used by consumers such as kineriggy)
-# Requires prebuilt/*.a to exist — run build.ps1 from D:/fourtitude first.
-# ---------------------------------------------------------------------------
 
 cc_import(
     name = "_fourtitude_c_import",
