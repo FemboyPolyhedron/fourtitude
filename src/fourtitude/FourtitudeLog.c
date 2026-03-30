@@ -37,7 +37,7 @@ static const char* level_color(FOUR_LogLevel level)
         case FOUR_LOG_INFO: return "0;36m";  
         case FOUR_LOG_WARN: return "0;33m";  
         case FOUR_LOG_ERROR: return "0;31m"; 
-        default: return "0m"; 
+        default: return "0;90m"; 
     }
 }
 
