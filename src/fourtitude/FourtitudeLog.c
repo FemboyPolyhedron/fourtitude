@@ -98,7 +98,7 @@ void FOUR_Logger_Log(FOUR_Logger* logger, FOUR_LogLevel level, const char* fmt, 
     snprintf(out, sizeof(out), "[%s] [%s/%s] %s\n", ts, name, level_str(level), body);
 
     char out2[4224];
-    snprintf(out2, sizeof(out2), "[%s] [\x1b[0;32m%s/\x1b[%s%s] %s\n", ts, name, level_color(level), level_str(level), body);
+    snprintf(out2, sizeof(out2), "[%s] [\x1b[0;32m%s/\x1b[%s%s\x1b[0m] %s\n", ts, name, level_color(level), level_str(level), body);
 
     if (s_stdout) { fputs(out2, stdout); fflush(stdout); }
 
