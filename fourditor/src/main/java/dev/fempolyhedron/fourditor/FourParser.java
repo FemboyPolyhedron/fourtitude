@@ -44,8 +44,7 @@ public class FourParser
         for (int i = 0; i < nodes.getLength(); i++)
         {
             Node node = nodes.item(i);
-            if (node.getNodeType() == Node.ELEMENT_NODE)
-                result.add(parseElement((Element) node));
+            if (node.getNodeType() == Node.ELEMENT_NODE) result.add(parseElement((Element) node));
         }
         return result;
     }

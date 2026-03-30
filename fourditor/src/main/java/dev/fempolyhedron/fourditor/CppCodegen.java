@@ -117,7 +117,6 @@ public class CppCodegen
         return "\"" + s.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n") + "\"";
     }
 
-    /** Emits integers, floats, and booleans as raw C++ literals; everything else as a quoted string. */
     static String cppValue(String s)
     {
         if (s.equals("true") || s.equals("false")) return s;

@@ -45,7 +45,6 @@ cc_library(
         "fourtitude/FourtitudeElement.cpp",
         "fourtitude/FourtitudeElements.cpp",
         "fourtitude/FourtitudeForm.cpp",
-        "fourtitude/FourtitudeImage.cpp",
         "fourtitude/FourtitudeWindow.cpp",
     ],
     hdrs      = ["fourtitude/fourtitudecpp.h"],

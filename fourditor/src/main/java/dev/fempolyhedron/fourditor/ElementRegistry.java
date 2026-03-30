@@ -32,11 +32,9 @@ public class ElementRegistry
     public static Map<String, String> buildMap()
     {
         Map<String, String> map = new LinkedHashMap<>();
-
-        // 1. Built-in descriptors from this jar / classpath
+ 
         scanClassLoader(ElementRegistry.class.getClassLoader(), map);
-
-        // 2. Plugin descriptors from addons/ directory next to the jar
+ 
         File addonsDir = findAddonsDir();
         if (addonsDir != null && addonsDir.isDirectory())
         {
@@ -51,9 +49,7 @@ public class ElementRegistry
         }
 
         return map;
-    }
-
-    // -------------------------------------------------------------------------
+    } 
 
     private static void scanClassLoader(ClassLoader cl, Map<String, String> map)
     {
@@ -121,9 +117,7 @@ public class ElementRegistry
         }
         catch (Exception ignored) {}
     }
-
-    // -------------------------------------------------------------------------
-
+ 
     private static void loadAddon(File jarFile, Map<String, String> map)
     {
         try
@@ -163,8 +157,7 @@ public class ElementRegistry
         try
         {
             URL loc = ElementRegistry.class.getProtectionDomain().getCodeSource().getLocation();
-            File jarFile = new File(loc.toURI());
-            // If running from a jar, addons/ is next to it; from a class dir, go up to project root
+            File jarFile = new File(loc.toURI()); 
             File base = jarFile.isFile() ? jarFile.getParentFile() : jarFile.getParentFile();
             return new File(base, "addons");
         }
