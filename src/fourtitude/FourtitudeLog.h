@@ -10,6 +10,7 @@ typedef enum
     FOUR_LOG_INFO,
     FOUR_LOG_WARN,
     FOUR_LOG_ERROR,
+    FOUR_LOG_LOG
 } FOUR_LogLevel;
 
 typedef struct FOUR_Logger FOUR_Logger;
