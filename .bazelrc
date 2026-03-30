@@ -1,0 +1,4 @@
+build --repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build --verbose_failures
+build --action_env=PATH=C:/msys64/ucrt64/bin;C:/msys64/usr/bin;C:/Windows/System32;C:/Windows
+build --dynamic_mode=off

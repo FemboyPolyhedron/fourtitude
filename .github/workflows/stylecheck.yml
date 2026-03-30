@@ -1,0 +1,20 @@
+name: stylecheck
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  style:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install bazel
+        uses: bazelbuild/setup-bazelisk@v2
+
+      - name: run stylecheck
+        run: bazel test //tools:stylecheck
