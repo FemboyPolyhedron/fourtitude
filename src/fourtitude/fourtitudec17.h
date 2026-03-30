@@ -4,8 +4,6 @@ extern "C" {
 #ifndef FOURTITUDE_C17_H
 #define FOURTITUDE_C17_H
 
-#include "FourtitudeLog.h"
-
 // FOURTITUDE for C17
 //
 // Authors:
@@ -21,12 +19,13 @@ extern "C" {
 // 
 // four :3
 
-
 #ifdef _WIN32
 #include <windows.h>
 #else
 #include <X11/Xlib.h>
 #endif
+
+#include "FourtitudeLog.h"
 
 typedef enum
 {

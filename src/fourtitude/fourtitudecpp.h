@@ -5,7 +5,6 @@
 #endif
 
 #include "fourtitudec17.h"
-#include <functional>
 
 // FOURTITUDE for C++17
 //
@@ -23,6 +22,7 @@
 // four :3
 
 #include <vector>
+#include <functional>
 #include <unordered_map>
 #include <string>
 #include <stdio.h>
